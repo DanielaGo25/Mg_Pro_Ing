@@ -15,3 +15,28 @@ ratiosR3 = [2.975, 2.950, 2.900, 2.825, 2.725, 2.625, 2.500, 2.350, 2.200] #L1/L
 ratiosV1 = [0.480, 0.950, 1.411, 1.845, 2.237, 2.600, 2.932, 3.232, 3.456] #delthaX/L2
 ratiosV2 = [2.613, 2.575, 2.538, 2.463, 2.350, 2.238, 2.125, 2.013, 1.863] #L3/L2
 ratiosV3 = [2.075, 2.050, 2.025, 1.975, 1.900, 1.825, 1.750, 1.675, 1.575] #L1/L2
+
+delthaX = 20 #Segmento para el cual se desea determinar las dimensiones del mecanismo
+
+Inter_tetha_ratiosV1 = lagrange(tetha, ratiosV1)
+Inter_tetha_ratiosV2 = lagrange(tetha, ratiosV2)
+Inter_tetha_ratiosV3 = lagrange(tetha, ratiosV3)
+
+Inter_tetha_ratiosR1 = lagrange(tetha, ratiosR1)
+Inter_tetha_ratiosR2 = lagrange(tetha, ratiosR2)
+Inter_tetha_ratiosR3 = lagrange(tetha, ratiosR3)
+
+Inter_grad_ratiosV1 = lagrange(deltha_grad, ratiosV1)
+Inter_grad_ratiosV2 = lagrange(deltha_grad, ratiosV2)
+Inter_grad_ratiosV3 = lagrange(deltha_grad, ratiosV3)
+
+Inter_grad_ratiosR1 = lagrange(deltha_grad, ratiosR1)
+Inter_grad_ratiosR2 = lagrange(deltha_grad, ratiosR2)
+Inter_grad_ratiosR3 = lagrange(deltha_grad, ratiosR1)
+
+L2 = delthaX/Inter_grad_ratiosR1(30)
+print('L2: ',L2)
+
+L3 = L2*Inter_grad_ratiosR2(30)
+print('L3: ',L3)
+
