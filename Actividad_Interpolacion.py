@@ -1,3 +1,14 @@
+'''
+Planteamiento del problema: 
+
+La actividad propuesta parte del diseño de mecanismos que generen trayectorias rectilíneas, específicamente mecanismos de cuatro barras. 
+Debido a la imposibilidad de lograr que el acoplador realice una trayectoria recta dada la estrutura que emplea, este actividad tiene por
+objetivo desarrollar funciones de interpolación para la sistesis óptima de este tipo de mecanismos y llegar a una solución aproximada a 
+una recta, mediante el criterio de rectitud y el criterio de velocidad para un segmento y rango angular determinados. 
+'''
+
+
+#Importación de librerias 
 from scipy.interpolate import lagrange
 from scipy.interpolate import InterpolatedUnivariateSpline
 import numpy as np
@@ -77,6 +88,39 @@ x3 = Inter_grad_ratiosV3(t)
 
 #Gráfica de las interpolaciones
 
+plt.figure('1')
+plt.subplot(2,3,1)
+plt.plot(deltha_grad, ratiosR1, ':^', color='red', linewidth='0.75', label='Datos originales')
+plt.plot(t, y1, color='blue', linewidth='1', label='Interpolación')
+plt.legend()
+
+plt.subplot(2,3,2)
+plt.plot(deltha_grad, ratiosR2, ':^', color='red', linewidth='0.75', label='Datos originales')
+plt.plot(t, y2, color='blue', linewidth='1', label='Interpolación')
+plt.legend()
+
+plt.subplot(2,3,3)
+plt.plot(deltha_grad, ratiosR3, ':^', color='red', linewidth='0.75', label='Datos originales')
+plt.plot(t, y3, color='blue', linewidth='1', label='Interpolación')
+plt.legend()
+
+plt.subplot(2,3,4)
+plt.plot(deltha_grad, ratiosV1, ':^', color='red', linewidth='0.75', label='Datos originales')
+plt.plot(t, x1, color='blue', linewidth='1', label='Interpolación')
+plt.legend()
+
+plt.subplot(2,3,5)
+plt.plot(deltha_grad, ratiosV2, ':^', color='red', linewidth='0.75', label='Datos originales')
+plt.plot(t, x2, color='blue', linewidth='1', label='Interpolación')
+plt.legend()
+
+plt.subplot(2,3,6)
+plt.plot(deltha_grad, ratiosV3, ':^', color='red', linewidth='0.75', label='Datos originales')
+plt.plot(t, x3, color='blue', linewidth='1', label='Interpolación')
+plt.legend()
+
+plt.show()
+
 #Interpolaciones empleando Splines
 print('\nInterpolaciones empleando Splines: ')
 Inter_ratiosR1 = InterpolatedUnivariateSpline(deltha_grad, ratiosR1)
@@ -133,3 +177,49 @@ x_2 = Inter_ratiosV2(t)
 x_3 = Inter_ratiosV3(t)
 
 #Gráfica de las interpolaciones
+
+plt.figure('2')
+plt.subplot(2,3,1)
+plt.plot(deltha_grad, ratiosR1, ':^', color='red', linewidth='0.75', label='Datos originales')
+plt.plot(t, y_1, color='blue', linewidth='1', label='Interpolación')
+plt.legend()
+
+plt.subplot(2,3,2)
+plt.plot(deltha_grad, ratiosR2, ':^', color='red', linewidth='0.75', label='Datos originales')
+plt.plot(t, y_2, color='blue', linewidth='1', label='Interpolación')
+plt.legend()
+
+plt.subplot(2,3,3)
+plt.plot(deltha_grad, ratiosR3, ':^', color='red', linewidth='0.75', label='Datos originales')
+plt.plot(t, y_3, color='blue', linewidth='1', label='Interpolación')
+plt.legend()
+
+plt.subplot(2,3,4)
+plt.plot(deltha_grad, ratiosV1,':^', color='red', linewidth='0.75', label='Datos originales')
+plt.plot(t, x_1, color='blue', linewidth='1', label='Interpolación')
+plt.legend()
+
+plt.subplot(2,3,5)
+plt.plot(deltha_grad, ratiosV2, ':^', color='red', linewidth='0.75', label='Datos originales')
+plt.plot(t, x_2, color='blue', linewidth='1', label='Interpolación')
+plt.legend()
+
+plt.subplot(2,3,6)
+plt.plot(deltha_grad, ratiosV3, ':^', color='red', linewidth='0.75', label='Datos originales')
+plt.plot(t, x_3, color='blue', linewidth='1', label='Interpolación')
+plt.legend()
+
+plt.show()
+
+'''
+Conclusiones:
+
+En este programa se emplean dos tipos de interporlaciones para dar cumplimiento con el problema planteado para esta actividad, el primero es la 
+interpolación de lagrange, el cual al ser aplicado a los datos tomados de la tabla de norton para el mecanismo de estudio y luego de ser 
+desarrollado a lo largo de las líneas de este código, permite visualizar graficamente un porcentaje de error con relación entre la interpolación 
+dada y los datos originales para cada una de las relaciones en el criterio de rectitud con en el de velovidad a 30 y 55 grados con un segmento
+rectilineo de 20 cm. Por otro lado, la interpolación realizada con splines, de igual forma que la interpolación anterior, se logra evidenciar 
+graficamente, que este realiza un seguimiento muy acertado correspondiente a los datos originales, del cual se puede determinar una solución muy
+aproximada al problema. 
+
+'''
