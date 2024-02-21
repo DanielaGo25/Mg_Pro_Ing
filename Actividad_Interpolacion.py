@@ -216,10 +216,10 @@ Conclusiones:
 
 En este programa se emplean dos tipos de interporlaciones para dar cumplimiento con el problema planteado para esta actividad, el primero es la 
 interpolación de lagrange, el cual al ser aplicado a los datos tomados de la tabla de norton para el mecanismo de estudio y luego de ser 
-desarrollado a lo largo de las líneas de este código, permite visualizar graficamente un porcentaje de error con relación entre la interpolación 
-dada y los datos originales para cada una de las relaciones en el criterio de rectitud con en el de velovidad a 30 y 55 grados con un segmento
-rectilineo de 20 cm. Por otro lado, la interpolación realizada con splines, de igual forma que la interpolación anterior, se logra evidenciar 
-graficamente, que este realiza un seguimiento muy acertado correspondiente a los datos originales, del cual se puede determinar una solución muy
+desarrollados a lo largo de las líneas de este código, permite visualizar graficamente un porcentaje de error con relación a la interpolación 
+dada y los datos originales para cada una de las relaciones en el criterio de rectitud como en el de velocidad a 30 y 55 grados con un segmento
+rectilineo de 20 cm. Por otro lado, la interpolación realizada con splines, de igual forma que la interpolación anterior, permite evidenciar 
+graficamente, que este realiza un seguimiento muy acertado correspondiente a los datos originales, del cual permite ser determinado como una solución muy
 aproximada al problema. 
 
 '''
